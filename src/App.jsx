@@ -24,10 +24,10 @@ const App = () => {
           {/* <Route path='/get-quote' element={<Contact/>}/> */}
           <Route path='/about' element={<About/>}/>
           <Route path='/contact' element={<Contact/>}/>
-          <Route path="/accounting" element={<Accounting />} />
-          <Route path="/tax" element={<Tax />} />
-          <Route path="/outsourcing" element={<Outsourcing />} />
-          <Route path="/it-services" element={<IT />} />
+          <Route path="/services/accounting" element={<Accounting />} />
+          <Route path="/servies/tax" element={<Tax />} />
+          <Route path="/services/outsourcing" element={<Outsourcing />} />
+          <Route path="/services/it-services" element={<IT />} />
           <Route path="/services/:serviceSlug/:subServiceSlug" element={<ServiceDetail />} />
         </Routes>
         <Footer></Footer>

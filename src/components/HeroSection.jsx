@@ -9,7 +9,7 @@ export default function HeroSection() {
       style={{
         // gradient first, then image — tweak the alpha (0.55) to make it darker/lighter
         backgroundImage:
-          "linear-gradient(rgba(30,58,138,0.25), rgba(30,58,138,0.45)), url('/images/img.jpg')",
+          "linear-gradient(rgba(30,58,138,0.25), rgba(30,58,138,0.45)), url('Accounting_Firm/images/img.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
