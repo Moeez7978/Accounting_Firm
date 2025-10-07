@@ -17,7 +17,7 @@ const App = () => {
   : '/'
   return (
     <>
-      <BrowserRouter basename={basename}>
+      <BrowserRouter basename='Accounting_Firm'>
         <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Home/>}/>
