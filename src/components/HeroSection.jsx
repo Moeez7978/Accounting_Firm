@@ -1,5 +1,6 @@
 // src/components/HeroSection.jsx
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -34,15 +35,18 @@ export default function HeroSection() {
           decisions with our professional tax advisory and accounting services.
         </motion.p>
 
-        <motion.a
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.45, duration: 0.6 }}
-          href="/contact"
-          className="inline-block bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-yellow-300 transition"
-        >
-          Get Your Taxes Managed Now
-        </motion.a>
+        <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.45, duration: 0.6 }}
+>
+  <Link
+    to="/contact"
+    className="inline-block bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-yellow-300 transition"
+  >
+    Get Your Taxes Managed Now
+  </Link>
+</motion.div>
       </div>
     </section>
   );

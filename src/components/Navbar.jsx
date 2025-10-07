@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
 export default function Navbar() {
@@ -13,11 +14,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         {/* Logo / Brand */}
         <div className="flex items-center space-x-2">
-          <img
-            src="/logo.svg"
-            alt="Logo"
-            className="h-8 w-8"
-          />
+          <img src="/logo.svg" alt="Logo" className="h-8 w-8" />
           <span className="text-lg sm:text-xl font-semibold tracking-wide">
             Dynamic Accounting
           </span>
@@ -25,8 +22,12 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
-          <a href="/" className="hover:text-yellow-400 transition">Home</a>
-          <a href="/about" className="hover:text-yellow-400 transition">About</a>
+          <Link to="/" className="hover:text-yellow-400 transition">
+            Home
+          </Link>
+          <Link to="/about" className="hover:text-yellow-400 transition">
+            About
+          </Link>
 
           {/* Dropdown */}
           <div className="relative">
@@ -43,42 +44,44 @@ export default function Navbar() {
                 onMouseLeave={() => setDropdownOpen(false)}
                 className="absolute top-full left-0 bg-white text-blue-900 shadow-lg rounded-lg mt-2 w-60 py-2 z-50"
               >
-                <a
-                  href="/accounting"
+                <Link
+                  to="/services/accounting"
                   className="block px-4 py-2 hover:bg-blue-50"
                 >
                   Accounting & Bookkeeping
-                </a>
-                <a
-                  href="/tax"
+                </Link>
+                <Link
+                  to="/services/tax"
                   className="block px-4 py-2 hover:bg-blue-50"
                 >
                   Tax Services
-                </a>
-                <a
-                  href="/outsourcing"
+                </Link>
+                <Link
+                  to="/services/outsourcing"
                   className="block px-4 py-2 hover:bg-blue-50"
                 >
                   Outsourcing & Remote Staffing
-                </a>
-                <a
-                  href="/it-services"
+                </Link>
+                <Link
+                  to="/services/it"
                   className="block px-4 py-2 hover:bg-blue-50"
                 >
                   IT & Cloud Solutions
-                </a>
+                </Link>
               </div>
             )}
           </div>
 
-          <a href="/contact" className="hover:text-yellow-400 transition">Contact</a>
+          <Link to="/contact" className="hover:text-yellow-400 transition">
+            Contact
+          </Link>
 
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="bg-yellow-400 text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition"
           >
             Get a Quote
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -93,8 +96,21 @@ export default function Navbar() {
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
         <div className="md:hidden bg-blue-800 text-white px-4 pb-4 space-y-2">
-          <a href="/" className="block py-2 border-b border-blue-700 hover:text-yellow-400">Home</a>
-          <a href="/about" className="block py-2 border-b border-blue-700 hover:text-yellow-400">About</a>
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
+            className="block py-2 border-b border-blue-700 hover:text-yellow-400"
+          >
+            Home
+          </Link>
+
+          <Link
+            to="/about"
+            onClick={() => setMenuOpen(false)}
+            className="block py-2 border-b border-blue-700 hover:text-yellow-400"
+          >
+            About
+          </Link>
 
           {/* Services Accordion for Mobile */}
           <div>
@@ -112,30 +128,57 @@ export default function Navbar() {
 
             {dropdownOpen && (
               <div className="pl-4 space-y-1">
-                <a href="/accounting" className="block py-1 hover:text-yellow-400">
+                <Link
+                  to="/services/accounting"
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-1 hover:text-yellow-400"
+                >
                   Accounting & Bookkeeping
-                </a>
-                <a href="/tax" className="block py-1 hover:text-yellow-400">
+                </Link>
+                <Link
+                  to="/services/tax"
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-1 hover:text-yellow-400"
+                >
                   Tax Services
-                </a>
-                <a href="/outsourcing" className="block py-1 hover:text-yellow-400">
+                </Link>
+                <Link
+                  to="/services/outsourcing"
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-1 hover:text-yellow-400"
+                >
                   Outsourcing & Remote Staffing
-                </a>
-                <a href="/it-services" className="block py-1 hover:text-yellow-400">
+                </Link>
+                <Link
+                  to="/services/it"
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-1 hover:text-yellow-400"
+                >
                   IT & Cloud Solutions
-                </a>
+                </Link>
               </div>
             )}
           </div>
 
-          <a href="/contact" className="block py-2 border-b border-blue-700 hover:text-yellow-400">Contact</a>
+          <Link
+            to="/contact"
+            onClick={() => setMenuOpen(false)}
+            className="block py-2 border-b border-blue-700 hover:text-yellow-400"
+          >
+            Contact
+          </Link>
 
-          <a href="/contact" className="inline-block w-full text-center bg-yellow-400 text-blue-900 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition">
+          <Link
+            to="/contact"
+            onClick={() => setMenuOpen(false)}
+            className="inline-block w-full text-center bg-yellow-400 text-blue-900 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition"
+          >
             Get a Quote
-          </a>
+          </Link>
         </div>
       )}
     </nav>
   );
 }
+
 
