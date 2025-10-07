@@ -7,5 +7,7 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-base: '/Accounting_Firm/',
+ base: process.env.NODE_ENV === 'production'
+    ? '/Accounting_Firm/' // 👈 Used when deployed to GitHub Pages
+    : '/', 
 })

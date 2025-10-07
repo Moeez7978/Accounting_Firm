@@ -12,9 +12,12 @@ import ServiceDetail from "./pages/Services/ServiceDetail.jsx";
 import Footer from './components/Footer.jsx'
 
 const App = () => {
+  const basename = import.meta.env.MODE === 'production'
+  ? '/Accounting_Firm'
+  : '/'
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Home/>}/>
